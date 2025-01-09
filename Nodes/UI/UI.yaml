@@ -1,10 +1,29 @@
 Name: UI
 Type: UICategoryFolder
 Children:
-- Name: DefaultStyleSheet
-  Id: g=8da2b5865c73184b748c69f73d34bedf
+- Name: FriendlyLight1
+  Id: g=a9afddf558397e1c0425f8c31560b435
   Type: StyleSheet
+  WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
   Children:
+  - Name: InteractiveColorGradientPercent
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: FontPixelSize
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 13.0
+  - Name: DataInputBackgroundColor
+    Type: BaseDataVariableType
+    DataType: Color
+    Value: "#ffffff"
+  - Name: Radius
+    Type: BaseDataVariableType
+    DataType: Size
+  - Name: AccentColor
+    Type: BaseDataVariableType
+    DataType: Color
+    Value: "#0fafff"
   - Name: ButtonStyles
     Type: BaseObjectType
     Children:
@@ -25,6 +44,31 @@ Children:
         Type: BaseDataVariableType
         DataType: Color
         Value: "#ffffff"
+      - Name: FocusBorderColor
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#0fafff"
+      - Name: FontFamily
+        Type: BaseDataVariableType
+        DataType: Font
+      - Name: FontWeight
+        Type: BaseDataVariableType
+        DataType: FontWeightEnum
+        Value: 400
+      - Name: FontItalic
+        Type: BaseDataVariableType
+        DataType: Boolean
+      - Name: FontSize
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: 13.0
+      - Name: BorderWidth
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: 1.0
+      - Name: Radius
+        Type: BaseDataVariableType
+        DataType: Size
     - Name: BorderedRectangular
       Type: ButtonStyle
       Children:
@@ -96,6 +140,7 @@ Children:
       - Name: Color
         Type: BaseDataVariableType
         DataType: Color
+        Value: "#3b3b3b00"
       - Name: BorderColor
         Type: BaseDataVariableType
         DataType: Color
@@ -112,11 +157,29 @@ Children:
     Children:
     - Name: Default
       Type: SwitchStyle
+      Children:
+      - Name: Radius
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: -1.0
+      - Name: HandleColor
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#f7f7f7"
   - Name: GaugeStyles
     Type: BaseObjectType
     Children:
     - Name: Default
       Type: GaugeStyle
+      Children:
+      - Name: Radius
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: -1.0
+      - Name: HandleColor
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#f7f7f7"
   - Name: NavigationPanelStyles
     Type: BaseObjectType
     Children:
@@ -132,6 +195,10 @@ Children:
     Children:
     - Name: Default
       Type: DataListStyle
+      Children:
+      - Name: VerticalLineColor
+        Type: BaseDataVariableType
+        DataType: Color
   - Name: ToolTipStyles
     Type: BaseObjectType
     Children:
@@ -162,6 +229,21 @@ Children:
     Children:
     - Name: Default
       Type: LabelStyle
+    - Name: WarningLabel
+      Type: LabelStyle
+      Children:
+      - Name: BackgroundColor
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#ffff00"
+      - Name: FontSize
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: 20.0
+      - Name: FontUnderline
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
   - Name: RadioButtonStyles
     Type: BaseObjectType
     Children:
@@ -172,6 +254,26 @@ Children:
     Children:
     - Name: Default
       Type: CheckBoxStyle
+  - Name: ScreenColor
+    Type: BaseDataVariableType
+    DataType: Color
+    Value: "#ffffff"
+  - Name: ns=4;LibraryReference
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 4
+      },
+      "Body": {
+       "libraryGuid": "8f879552c67d48428e3c5ec6ef776800",
+       "objectGuid": "201506154dd72342305722824da541a6",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
 - Name: NativePresentationEngine
   Type: NativePresentationEngine
   ReferenceType: HasOrderedComponent
@@ -191,7 +293,7 @@ Children:
   - Name: StyleSheet
     Type: NodePointer
     DataType: NodeId
-    Value: "/Objects/elettroservice_corso_ftoptix/UI/DefaultStyleSheet"
+    Value: "/Objects/elettroservice_corso_ftoptix/UI/FriendlyLight1"
     Children:
     - Name: Kind
       Type: PropertyType
@@ -208,6 +310,10 @@ Children:
       Value: "/Types/ObjectTypes/BaseObjectType/UserType"
   - Name: Sessions
     Type: BaseObjectType
+  - Name: DynamicVariablesPollingTime
+    Type: BaseDataVariableType
+    DataType: Duration
+    Value: "0:00:00:00.1000000"
 - Name: MainWindow
   Id: g=01a7e8933afd7c95fe894b0859308138
   Supertype: Window
@@ -230,4 +336,8 @@ Children:
       Type: DynamicLink
       DataType: NodePath
       Value: "/Objects/elettroservice_corso_ftoptix@BrowseName"
+  - Name: FullScreen
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
 - File: Screens/Screens.yaml

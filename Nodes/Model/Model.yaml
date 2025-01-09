@@ -1,2 +1,12 @@
 Name: Model
 Type: ModelCategoryFolder
+Children:
+- Name: ShowSpinbox
+  Type: BaseDataVariableType
+  DataType: Boolean
+- Name: Temperature
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: EnableGauge
+  Type: BaseDataVariableType
+  DataType: Boolean
